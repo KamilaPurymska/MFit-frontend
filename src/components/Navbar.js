@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
+import '../App.css'
 class Navbar extends Component {
 
   renderIsLoggedIn = () => {
-    return <div>
+    return <div className="navbar">
       <p>username: {this.props.user.username}</p>
       <p onClick={this.props.logout}>Logout</p>
     </div>

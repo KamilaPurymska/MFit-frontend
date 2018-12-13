@@ -9,18 +9,22 @@ import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import AuthProvider from './providers/AuthProvider';
 import Home from './pages/Home';
+import TrainersList from './components/TrainersList';
+import TrainerProfile from './components/TrainerProfile'
+
 class App extends Component {
   render() {
     return (
       <AuthProvider>
         <div className="container">
-          <h1>Basic React Authentication</h1>
           <Navbar />
           <Switch>
               <Route exact path="/" component={Home} />
               <AnonRoute path="/signup" component={Signup} />
               <AnonRoute path="/login" component={Login} />
               <PrivateRoute path="/private" component={Private} />
+              <Route path='/trainers/:id' component={TrainerProfile} />
+              <Route path='/trainers' component={TrainersList} />
           </Switch>
         </div>
       </AuthProvider>

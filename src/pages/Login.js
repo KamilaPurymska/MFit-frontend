@@ -13,6 +13,7 @@ class Login extends Component {
 
     auth.login({ username, password })
     .then( (user) => {
+      console.log(user)
       this.props.setUser(user);
     })
     .catch( error => console.log(error) )

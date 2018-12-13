@@ -4,7 +4,6 @@ class Trainers extends Component {
   render() {
     return (
       <div>
-        
       </div>
     );
   }
