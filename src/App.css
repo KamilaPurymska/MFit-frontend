@@ -21,3 +21,9 @@ div.navbar{
   display: flex;
   justify-content: space-between
 }
+
+div.trainercard{
+  display: flex;
+  justify-content: space-around
+}
+

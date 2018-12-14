@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { withAuth } from '../providers/AuthProvider';
-import TrainersList from '../components/TrainersList';
+import UserProfile from '../components/UserProfile';
 
 
-class Trainers extends Component {
+class UserProfilePage extends Component {
   render() {
     return (
       <div>
-        <TrainersList />
+        <UserProfile />
       </div>
     );
   }
 }
 
-export default withAuth(Trainers);
+export default withAuth(UserProfilePage);

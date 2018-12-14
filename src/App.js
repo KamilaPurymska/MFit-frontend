@@ -9,8 +9,10 @@ import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import AuthProvider from './providers/AuthProvider';
 import Home from './pages/Home';
-import TrainersList from './components/TrainersList';
-import TrainerProfile from './components/TrainerProfile'
+import Trainer from './pages/Trainers';
+import TrainerProfile from './pages/TrainerProfile'
+import UserProfilePage from './pages/UserProfilePage';
+import PreferencesPage from './pages/PreferencesPage';
 
 class App extends Component {
   render() {
@@ -23,8 +25,10 @@ class App extends Component {
               <AnonRoute path="/signup" component={Signup} />
               <AnonRoute path="/login" component={Login} />
               <PrivateRoute path="/private" component={Private} />
-              <Route path='/trainers/:id' component={TrainerProfile} />
-              <Route path='/trainers' component={TrainersList} />
+              <PrivateRoute path='/trainers/:id' component={TrainerProfile} />
+              <PrivateRoute path='/trainers' component={Trainer} />
+              <PrivateRoute path='/auth/me' component={UserProfilePage} />
+              <PrivateRoute path='/preferences' component={PreferencesPage} />
           </Switch>
         </div>
       </AuthProvider>

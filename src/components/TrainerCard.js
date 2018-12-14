@@ -9,9 +9,12 @@ class TrainerCard extends Component {
     
     return (
       <div>
-        <p><Link to={`/trainers/${this.props.trainer._id}`}>
-        {this.props.trainer.username}</Link>
-        </p>
+        <div className="trainercard">
+          <p><Link to={`/trainers/${this.props.trainer._id}`}>
+          {this.props.trainer.username}</Link>
+          </p>
+          <p>{this.props.trainer.preferences.price}</p>
+        </div>
       </div>
     )}
 }

@@ -4,6 +4,7 @@ class Trainers {
   constructor() {
     this.apiInstance = axios.create({
       baseURL: 'http://localhost:5000/api',
+      withCredentials: true,
     });
   }
 
@@ -21,7 +22,10 @@ getDetailTrainer(id) {
     })
 }
 
-      
+setPreferences(data) {
+  return this.apiInstance.put('/preferences', data)
+  .then(response => response.data)
+}
 
 /*
   getMatchTrainers(preferences) {

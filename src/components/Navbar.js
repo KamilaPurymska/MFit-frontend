@@ -6,7 +6,8 @@ class Navbar extends Component {
 
   renderIsLoggedIn = () => {
     return <div className="navbar">
-      <p>username: {this.props.user.username}</p>
+      <p><Link to='/auth/me'>username: {this.props.user.username}</Link></p>
+      <Link to='/private'>Home</Link>
       <p onClick={this.props.logout}>Logout</p>
     </div>
   }
