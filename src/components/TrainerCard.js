@@ -6,7 +6,6 @@ class TrainerCard extends Component {
 
 
   render() {
-    
     return (
       <div>
         <div className="trainercard">
