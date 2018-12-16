@@ -37,7 +37,7 @@ class TrainersList extends Component {
       return <div>Loading...</div>
     }
     if (trainers.length === 0) {
-      return <div>there is no phones</div>
+      return <div>there is no trainers</div>
     }
     if (this.state.error) {
       return <div>error on the connection</div>

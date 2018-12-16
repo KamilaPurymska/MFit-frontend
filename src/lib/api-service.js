@@ -27,6 +27,11 @@ setPreferences(data) {
   .then(response => response.data)
 }
 
+followTrainer(id) {
+  return this.apiInstance.put(`/trainers/${id}/follow`)
+  .then(response => response.data)
+}
+
 /*
   getMatchTrainers(preferences) {
     const { goals, goal, city, online, gender, profession} = preferences;

@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { withAuth } from '../providers/AuthProvider';
 
 
+
 class UserProfile extends Component {
   
+  
+ 
 
   render() {
     console.log(this.props.user._id)
@@ -15,7 +18,7 @@ class UserProfile extends Component {
         <p>My age: {this.props.user.preferences.age}</p>
         <p>My city: {this.props.user.preferences.city}</p>
         <p>How active I am: {this.props.user.preferences.active}</p>
-
+        
 
       </div>
     );

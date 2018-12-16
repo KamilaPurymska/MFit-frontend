@@ -21,6 +21,21 @@ class TrainerProfile extends Component {
       })
   }
 
+  handleOnSubmit = (e) => {
+    e.preventDefault();
+    const { trainer } = this.state;
+    trainersService.followTrainer(trainer)
+      .then((trainer) => {
+        this.props.setUser(trainer)
+        this.props.history.push(`/trainers`);
+      })
+
+  }
+
+  componentWillUnmount() {
+    console.log("errrror")
+  }
+
   render() {
     if (this.state.isLoading) {
       return <div>Loading.....</div>
@@ -33,6 +48,9 @@ class TrainerProfile extends Component {
           <p>{this.state.trainer.email}</p>
         </div>
         <p><Link to={`/trainers`}>back</Link></p>
+        <form onSubmit={this.handleOnSubmit} method="POST">
+            <button type="submit"> Follow </button>
+        </form>
       </div>
     );
   }
