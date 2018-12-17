@@ -13,13 +13,13 @@ class TrainerCard extends Component {
   render() {
     return (
       <div>
-        <div className="trainercard">
-          <Link className="trainercard-link" to={`/trainers/${this.props.trainer._id}`}>
+        <div>
+          <Link className="trainercard" to={`/trainers/${this.props.trainer._id}`}>
             <div className="img-train-list" >
               <img src={this.props.trainer.photoUrl} alt="d" />
             </div>
-            <p>{this.props.trainer.username}</p>
-            <p>{this.props.trainer.preferences.price}</p>
+            <p className="name-trainer">{this.props.trainer.username}</p>
+            <p className="price-trainer">{this.props.trainer.preferences.price}</p>
           </Link>
         </div>
       </div>

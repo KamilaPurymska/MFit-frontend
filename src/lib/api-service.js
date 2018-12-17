@@ -28,7 +28,8 @@ setPreferences(data) {
 }
 
 followTrainer(id) {
-  return this.apiInstance.put(`/trainers/${id}/follow`)
+  console.log(id)
+  return this.apiInstance.post(`/trainers/${id}/follow`)
   .then(response => response.data)
 }
 

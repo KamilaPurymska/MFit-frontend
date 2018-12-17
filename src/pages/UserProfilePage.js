@@ -7,6 +7,7 @@ class UserProfilePage extends Component {
   render() {
     return (
       <div>
+        <h2>My name: {this.props.user.username}</h2>
         <UserProfile />
       </div>
     );

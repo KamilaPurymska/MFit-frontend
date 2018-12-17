@@ -11,6 +11,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  margin-bottom: 20%;
 }
 
 div.navbar{
@@ -19,19 +20,98 @@ div.navbar{
   right: 0;
   position: fixed;
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  position: fixed;
+  background-color: #FAFAFA
 }
 
-div.trainercard{
-  display: flex;
-  justify-content: space-around
+.trainercard{
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+  grid-template-areas: 
+    "img name price"
+  
+  
 }
 
 .img-train-list{
-  width: 20%
+  grid-area: img
+}
+
+.name-trainer{
+  grid-area: name;
+  margin-left: 7%;
+  align-self: center;
+  margin-bottom: 0
+}
+
+.price-trainer{
+  grid-area: price;
+  align-self: center;
+  margin-bottom: 0
 }
 
 .trainercard-link{
   display: flex;
   justify-content: space-around
+}
+
+h3, h1{
+  text-align: center
+}
+
+.formrow {
+	overflow:hidden;
+	position:relative;
+	max-width:300px;
+	margin:auto;
+	padding:10px;
+}
+.checklabel {
+	display:block;
+	width:100%;
+	background-color: #fff;
+	border: none;
+  border-radius: 45px;
+	text-align:center;
+	padding:10px 3em;
+  font-size: 11px;
+  font-family: 'Roboto', sans-serif;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.checklabel:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.checkbox {
+	position:absolute;
+	right:10px;
+	top:15px;
+	width: 2.2em;
+	height: 2.2em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	border:none;
+	padding:0;
+	border-radius:0;
+	vertical-align: middle;
+	
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-color:transparent;
+	background-position:-10em -10em;
+	transition:.3s ease;
+	outline:0;
+}
+
+.checkbox:active + label {
+	background-color: #ddd;
+}
+.checkbox:checked {
+  background-position: 0 0;
 }

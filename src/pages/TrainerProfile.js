@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 class TrainerProfile extends Component {
   state = {
     trainer: {},
-    isLoading: true
+    isLoading: true,
+    message: ''
   }
 
   componentDidMount() {
@@ -23,11 +24,16 @@ class TrainerProfile extends Component {
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-    const { trainer } = this.state;
-    trainersService.followTrainer(trainer)
-      .then((trainer) => {
-        this.props.setUser(trainer)
-        this.props.history.push(`/trainers`);
+    const { id } = this.props.match.params;
+    trainersService.followTrainer(id)
+      .then((result) => {
+        console.log(result)
+        if(result.isInArray){
+          this.setState({
+            message: 'Already follow'
+          })
+        }
+        this.props.history.push(`/trainers/${id}`);
       })
 
   }
@@ -43,14 +49,16 @@ class TrainerProfile extends Component {
     return (
       <div>
         <div>
+          <img src={this.state.trainer.photoUrl} alt="d" />
           <p>{this.state.trainer.username}</p>
-          <p>{this.state.trainer.desciption}</p>
           <p>{this.state.trainer.email}</p>
+          <p>{this.state.trainer.desciption}</p>
         </div>
         <p><Link to={`/trainers`}>back</Link></p>
         <form onSubmit={this.handleOnSubmit} method="POST">
             <button type="submit"> Follow </button>
         </form>
+        {this.state.message}
       </div>
     );
   }

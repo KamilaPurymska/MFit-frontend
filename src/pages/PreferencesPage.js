@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import trainersService from '../lib/api-service';
 import authService from '../lib/auth-service';
 import { withAuth } from '../providers/AuthProvider';
+import '../App.css'
 
 class PreferencesPage extends Component {
   state = {
@@ -45,19 +46,24 @@ class PreferencesPage extends Component {
         [e.target.name]: e.target.value
       },
     })
+    console.log(this.state.user)
   }
 
   handleOnClick = () => {
+    
+    this.setState({
+      secondPage: true,
+      firstPage: false
+    })
+  }
+
+  handleOnClick2 = () => {
     if (this.state.firstPage === false && this.state.secondPage === true) {
       this.setState({
         thirdPage: true,
         secondPage: false
       })
     }
-    this.setState({
-      secondPage: true,
-      firstPage: false
-    })
   }
 
   handleOnSubmit = (e) => {
@@ -75,7 +81,7 @@ class PreferencesPage extends Component {
 
 
   render() {
-    console.log(this.state.user.active)
+    console.log(this.state.user.goals)
     const { user: { city } } = this.state
     if (this.state.isLoading) {
       return <div>Loading ...</div>
@@ -85,23 +91,28 @@ class PreferencesPage extends Component {
       <div>
         <form onSubmit={this.handleOnSubmit}>
           <h3>Let's find yout trainer!</h3>
+
+  
           {this.state.firstPage ? <div>
-            <h1>What Are Your Fitness Goals?</h1>
-            <label>Lose weight
-                <input type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
+            <h2>What Are Your Fitness Goals?</h2>
+
+            <div className="formrow">
+            <label className="checklabel">Lose weight
+                <input className="checkbox" type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
             </label>
-            <label>Get stronger
-                <input type="radio" id="check" name="goals" value="Get stronger" onChange={this.handleOnChange} />
+            <label className="checklabel">Get stronger
+                <input className="checkbox" type="radio" id="check" name="goals" value="Get stronger" onChange={this.handleOnChange} />
             </label>
-            <label>Be healthier and feel better
-                <input type="radio" id="check" name="goals" value="Be healthier and feel better" onChange={this.handleOnChange} />
+            <label className="checklabel">Be healthier and feel better
+                <input className="checkbox" type="radio" id="check" name="goals" value="Be healthier and feel better" onChange={this.handleOnChange} />
             </label>
-            <label>Recover and Rehab
-                <input type="radio" id="check" name="goals" value="Recover and Rehab" onChange={this.handleOnChange} />
+            <label className="checklabel">Recover and Rehab
+                <input className="checkbox" type="radio" id="check" name="goals" value="Recover and Rehab" onChange={this.handleOnChange} />
             </label>
+            </div>
 
 
-            <h1>How Active Are You Now?</h1>
+            <h2>How Active Are You Now?</h2>
             <label>I Never Work Out
                       <input type="radio" id="check" name="active" value="I Never Work Out" onChange={this.handleOnChange} />
             </label>
@@ -119,11 +130,12 @@ class PreferencesPage extends Component {
           </div> : null
           }
 
+
           {this.state.secondPage ? <div> 
-            <h1>Your city</h1>
+            <h2>Your city</h2>
             <input type="text" value={city} name="city" onChange={this.handleOnChange} placeholder="city" />
             
-            <h1>Your age?</h1>
+            <h2>Your age?</h2>
             <label>19 or younger
                       <input type="radio" id="check" name="age" value="19 or younger" onChange={this.handleOnChange} />
             </label>
@@ -143,8 +155,25 @@ class PreferencesPage extends Component {
                       <input type="radio" id="check" name="age" value="60+" onChange={this.handleOnChange} />
             </label>
 
+            <button onClick={this.handleOnClick2}>next</button>
+          </div> : null
+          }
 
-            <h1>Trainer gender preferences?</h1>
+
+          {this.state.thirdPage ? <div> 
+            <h1>What Are Your Trainer Preferences?</h1>
+            <h2>Trainer Style</h2>
+            <label for="check1">A Drill Sergeant
+                <input type="checkbox" id="check1" value="A Drill Sergeant" name="profession" onChange={this.handleOnChange} placeholder="profession" />
+            </label>
+            <label for="check2">A Supportive, Nurturing Coach
+                <input type="checkbox" id="check2" value="A Supportive, Nurturing Coach" name="profession" onChange={this.handleOnChange} placeholder="profession" />
+            </label>
+            <label for="check2">An Educator or Teacher
+                <input type="checkbox" id="check2" value="An Educator or Teacher" name="profession" onChange={this.handleOnChange} placeholder="profession" />
+            </label>
+
+            <h2>Trainer Gender</h2>
             <label>Female
                       <input type="radio" id="check" name="gender" value="Female" onChange={this.handleOnChange} />
             </label>
@@ -154,19 +183,10 @@ class PreferencesPage extends Component {
             <label>Doesnt matter
                       <input type="radio" id="check" name="gender" value="Doesnt matter" onChange={this.handleOnChange} />
             </label>
+          </div> : null
+          }
 
-            <button onClick={this.handleOnClick}>next</button>
-          </div> : null
-          }
-          {this.state.thirdPage ? <div> <h1>proffesion</h1>
-            <label for="check1">profession
-                <input type="checkbox" id="check1" value="profff" name="profession" onChange={this.handleOnChange} placeholder="profession" />
-            </label>
-            <label for="check2">prof2
-                <input type="checkbox" id="check2" value="2" name="profession" onChange={this.handleOnChange} placeholder="profession" />
-            </label>
-          </div> : null
-          }
+
           <button type="submit">Submit</button>
         </form>
 

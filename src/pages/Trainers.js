@@ -7,6 +7,7 @@ class Trainers extends Component {
   render() {
     return (
       <div>
+        <h3>Your trainers</h3>
         <TrainersList />
       </div>
     );
