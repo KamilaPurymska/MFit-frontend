@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import trainersService from '../lib/api-service';
 import { withAuth } from '../providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import TrainerCard from '../components/TrainerCard'
 
 class TrainerProfile extends Component {
   state = {
@@ -53,6 +54,12 @@ class TrainerProfile extends Component {
           <p>{this.state.trainer.username}</p>
           <p>{this.state.trainer.email}</p>
           <p>{this.state.trainer.desciption}</p>
+          <h3>Specialities</h3>
+          <ul>
+            {this.state.trainer.preferences.goals.map((goal)=> {
+              return <li key={goal._id}>{goal}</li>}
+            )}
+          </ul>
         </div>
         <p><Link to={`/trainers`}>back</Link></p>
         <form onSubmit={this.handleOnSubmit} method="POST">
