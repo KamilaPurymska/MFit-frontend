@@ -56,6 +56,15 @@ div.navbar{
   justify-content: space-around
 }
 
+.train{
+  width: 30%
+}
+
+.user-trainer-list{
+  list-style: none;
+  display: flex;
+}
+
 h3, h1{
   text-align: center
 }
@@ -114,4 +123,8 @@ h3, h1{
 }
 .checkbox:checked {
   background-position: 0 0;
+}
+
+iframe{
+  width: 100%
 }

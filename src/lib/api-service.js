@@ -3,7 +3,7 @@ import axios from 'axios';
 class Trainers {
   constructor() {
     this.apiInstance = axios.create({
-      baseURL: 'http://localhost:5000/api',
+      baseURL: `${process.env.REACT_APP_API_URL}/api`,
       withCredentials: true,
     });
   }
@@ -28,10 +28,10 @@ setPreferences(data) {
 }
 
 followTrainer(id) {
-  console.log(id)
   return this.apiInstance.post(`/trainers/${id}/follow`)
   .then(response => response.data)
 }
+
 
 /*
   getMatchTrainers(preferences) {

@@ -9,7 +9,7 @@ class PreferencesPage extends Component {
     user: {
       goals: '',
       gender: '',
-      profession: '',
+      styles: '',
       active: '',
       city: '',
       age: ''
@@ -23,13 +23,13 @@ class PreferencesPage extends Component {
   componentDidMount() {
     authService.me()
       .then((user) => {
-        const { goals, gender, profession, active, city, age } = user.preferences
+        const { goals, gender, styles, active, city, age } = user.preferences
 
         this.setState({
           user: {
             goals,
             gender,
-            profession,
+            styles,
             active,
             city,
             age
@@ -96,18 +96,18 @@ class PreferencesPage extends Component {
           {this.state.firstPage ? <div>
             <h2>What Are Your Fitness Goals?</h2>
 
-            <div className="formrow">
-            <label className="checklabel">Lose weight
-                <input className="checkbox" type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
+            <div className="">
+            <label className="">Lose weight
+                <input className="" type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
             </label>
-            <label className="checklabel">Get stronger
-                <input className="checkbox" type="radio" id="check" name="goals" value="Get stronger" onChange={this.handleOnChange} />
+            <label className="">Get stronger
+                <input className="" type="radio" id="check" name="goals" value="Get stronger" onChange={this.handleOnChange} />
             </label>
-            <label className="checklabel">Be healthier and feel better
-                <input className="checkbox" type="radio" id="check" name="goals" value="Be healthier and feel better" onChange={this.handleOnChange} />
+            <label className="">Be healthier and feel better
+                <input className="" type="radio" id="check" name="goals" value="Be healthier and feel better" onChange={this.handleOnChange} />
             </label>
-            <label className="checklabel">Recover and Rehab
-                <input className="checkbox" type="radio" id="check" name="goals" value="Recover and Rehab" onChange={this.handleOnChange} />
+            <label className="">Recover and Rehab
+                <input className="" type="radio" id="check" name="goals" value="Recover and Rehab" onChange={this.handleOnChange} />
             </label>
             </div>
 
@@ -164,13 +164,13 @@ class PreferencesPage extends Component {
             <h1>What Are Your Trainer Preferences?</h1>
             <h2>Trainer Style</h2>
             <label for="check1">A Drill Sergeant
-                <input type="checkbox" id="check1" value="A Drill Sergeant" name="profession" onChange={this.handleOnChange} placeholder="profession" />
+                <input type="checkbox" id="check1" value="A Drill Sergeant" name="styles" onChange={this.handleOnChange} placeholder="styles" />
             </label>
             <label for="check2">A Supportive, Nurturing Coach
-                <input type="checkbox" id="check2" value="A Supportive, Nurturing Coach" name="profession" onChange={this.handleOnChange} placeholder="profession" />
+                <input type="checkbox" id="check2" value="A Supportive, Nurturing Coach" name="styles" onChange={this.handleOnChange} placeholder="styles" />
             </label>
             <label for="check2">An Educator or Teacher
-                <input type="checkbox" id="check2" value="An Educator or Teacher" name="profession" onChange={this.handleOnChange} placeholder="profession" />
+                <input type="checkbox" id="check2" value="An Educator or Teacher" name="styles" onChange={this.handleOnChange} placeholder="styles" />
             </label>
 
             <h2>Trainer Gender</h2>

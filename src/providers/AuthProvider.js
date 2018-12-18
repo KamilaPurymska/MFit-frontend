@@ -35,6 +35,7 @@ class AuthProvider extends Component {
   componentDidMount() {
     auth.me()
       .then((user) => {
+        console.log(user)
         this.setState({
           user,
           isLogged: true,
