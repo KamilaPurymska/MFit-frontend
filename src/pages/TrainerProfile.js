@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import trainersService from '../lib/api-service';
 import { withAuth } from '../providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import Video from '../components/Video';
+import Email from '../components/Email'
 
 class TrainerProfile extends Component {
   state = {
     trainer: {},
     isLoading: true,
-    message: ''
+    message: '',
+    firstPage: true,
+    secondPage: false,
   }
 
   componentDidMount() {
@@ -35,32 +39,67 @@ class TrainerProfile extends Component {
 
   }
 
+  handleOnClick = () => {
+    
+    this.setState({
+      secondPage: true,
+      firstPage: false,
+    })
+  }
+
+  handleOnClick2 = () => {
+    
+    this.setState({
+      secondPage: false,
+      firstPage: true,
+    })
+  }
+
   render() {
     if (this.state.isLoading) {
       return <div>Loading.....</div>
     }
     return (
       <div>
+        {this.state.firstPage ? <div>
         <div>
-          <img src={this.state.trainer.photoUrl} alt="d" />
-          <p>{this.state.trainer.username}</p>
-          <p>{this.state.trainer.email}</p>
-          <p>{this.state.trainer.desciption}</p>
-          { this.state.trainer.videoUrl === 'String' ? null : <iframe width="560" title="video" height="315" src={this.state.trainer.videoUrl} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen> </iframe> }
+          <img className="img-profile" src={this.state.trainer.photoUrl} alt="d" />
+          <div className="container">
+            <h3>{this.state.trainer.username}</h3>
+
+            <ul>
+              {this.state.trainer.preferences.goals.map((goal)=> {
+                return <li key={`id=${goal}`}>{goal}</li>}
+              )}
+            </ul>
+            
+            <p className="description">{this.state.trainer.desciption}</p>
+
+            { this.state.trainer.videoUrl.length === 0 ? null :
+            <button className="videos"onClick = {this.handleOnClick}>Videos</button> }
+            
+            <form onSubmit={this.handleOnSubmit} method="POST">
+              <button className="videos" type="submit"> {this.state.title} </button>
+            </form>
+
+            <Email trainer={this.state.trainer}></Email>
           
-          <h3>Specialities</h3>
-          <ul>
-            {this.state.trainer.preferences.goals.map((goal)=> {
-              return <li key={`id=${goal}`}>{goal}</li>}
-            )}
-          </ul>
+          
+          <p><Link to={`/trainers`}>back</Link></p>
+           
+          </div>
         </div>
-        <p><Link to={`/trainers`}>back</Link></p>
-        <form onSubmit={this.handleOnSubmit} method="POST">
-            <button type="submit"> {this.state.title} </button>
-        </form>
-        {this.state.message}
-      </div>
+        </div>: null }
+
+        {this.state.secondPage ? <div>
+          { this.state.trainer.videoUrl.length === 0 ? null : <Video trainer={this.state.trainer} /> }
+          
+          <button onClick={this.handleOnClick2}>Back</button>
+          </div> : null
+          }
+        
+      </div> 
+    
     );
   }
 }

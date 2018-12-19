@@ -13,11 +13,21 @@ import TrainerProfile from './pages/TrainerProfile'
 import UserProfilePage from './pages/UserProfilePage';
 import PreferencesPage from './pages/PreferencesPage';
 
+const Page404 = () => (
+  <div>
+    <h2>404, sorry page not found</h2>
+  </div>
+);
+
 class App extends Component {
+
+  
+
   render() {
     return (
       <AuthProvider>
-        <div className="container">
+        <div>
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet" />
           <Navbar />
           <Switch>
               <PrivateRoute exact path="/" component={Home} />
@@ -27,6 +37,7 @@ class App extends Component {
               <PrivateRoute path='/trainers' component={Trainer} />
               <PrivateRoute path='/auth/myProfile' component={UserProfilePage} />
               <PrivateRoute path='/preferences' component={PreferencesPage} />
+              <Route component={Page404} />
           </Switch>
         </div>
       </AuthProvider>

@@ -39,7 +39,7 @@ class UserProfile extends Component {
             return <Link to={`/trainers/${trainer._id}`} key={`id=${trainer._id}`}>
             <li className = "user-trainer-list" >
               <div className="train" >
-                <img src={trainer.photoUrl} alt="d" />
+                <img className="img-trainer" src={trainer.photoUrl} alt="d" />
               </div>
               <p className="">{trainer.username}</p>
             </li>

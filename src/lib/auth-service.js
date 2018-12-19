@@ -34,7 +34,10 @@ class Auth {
     return this.auth.get('/auth/myProfile')
     .then(response => response.data)
   }
+  
 }
+
+
 
 const auth = new Auth();
 

@@ -8,10 +8,14 @@ html {
   box-sizing: inherit;
 }
 
+p{
+  margin: 0
+}
 body {
   margin: 0;
   padding: 0;
   margin-bottom: 20%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 div.navbar{
@@ -66,7 +70,8 @@ div.navbar{
 }
 
 h3, h1{
-  text-align: center
+  text-align: center;
+  color: #363636;
 }
 
 .formrow {
@@ -128,3 +133,229 @@ h3, h1{
 iframe{
   width: 100%
 }
+
+
+/* ---- auth ---- */
+.background-auth{
+  background-image: url('./images/z16854718Q\,Anna-Lewandowska-podczas-cwiczen.jpg');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.gradiend{
+  background-image: linear-gradient(to left bottom, #f46b45, #f47b42, #f38b42, #f19a44, #eea849);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.92
+}
+
+.auth-form{
+  height: 90%;
+  width: 70%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-content: center;
+}
+
+.input-auth{
+  border-bottom-color: rgba(212,212,216, 0.9);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-bottom: 4%;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    margin-bottom: 5%;
+    color: #2F323A;
+    width: 80%;
+    outline: none
+}
+
+.input-auth::placeholder{
+  color:white;
+  opacity: 0.5;
+  font-weight: 100;
+}
+
+.signup-header{
+  color: white;
+  font-size: 2em;
+  margin-bottom: 15%;
+}
+
+.sign-up-but{
+  font-size: 1em;
+    padding: 4%;
+    border-radius: 45px;
+    font-family: 'Montserrat', sans-serif;
+    color: #2F323A ;
+    background:#E8CEA0;
+    border: none;
+    margin-top: 15%;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: 80%;
+    outline: none
+}
+
+.aldready-log{
+  color: #2F323A ;
+  font-size: 0.8em;
+  margin-top: 8%
+
+}
+
+/* ---- home ---- */
+
+div.home{
+  background-color: #44647B;
+  width: 100%;
+  height: 95%;
+  position: absolute;
+}
+
+img.logo-home{
+  width: 70%
+}
+
+.logo{
+  text-align: center;
+}
+
+.find{
+  font-size: 2em;
+  text-align: center;
+  color:#E8CEA0;
+  margin-bottom: 20%
+}
+
+/* ---- list ---- */
+
+.img-trainer{
+  width: 100%
+}
+
+/* ---- trainer profile ---- */
+.img-profile{
+  width: 100%
+}
+
+.container{
+  width: 85%;
+  margin: 0 auto
+}
+
+.description{
+  color: #363636;
+  line-height: 1.8em;
+  text-align: justify;
+}
+
+.videos{
+  font-size: 1em;
+  padding: 4%;
+  border-radius: 45px;
+  font-family: 'Montserrat', sans-serif;
+  color: white ;
+  background:linear-gradient(to right, #f46b45, #f47b42, #f38b42, #f19a44, #eea849);
+  border-color: linear-gradient(to left bottom, #44647b, #597e98, #6f98b7, #86b4d6, #9dd0f6);
+  margin-top: 15%;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 100%;
+  outline: none
+}
+
+/* ---- email---- */
+
+form.form-email{
+  display: grid;
+  margin-top: 10%
+}
+
+input.email{
+  border-color: #B2B2B2;
+  border-radius: 45px;
+  font-size: 1em;
+  padding: 4%;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  outline: none
+}
+
+input.email:focus{
+  border-color: #eea849;
+}
+
+textarea.email{
+  border-color: #eea849;
+  border-radius: 45px;
+  font-size: 1em;
+  padding: 4%;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  outline: none
+}
+
+/*---pref----*/
+
+.input-radio{
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 30px;
+  
+}
+ /*
+input[type=radio] {
+    display: none;
+  }
+ 
+  input[type=radio]{
+    padding: 20px;
+    border-radius: 40px;
+    border: 1px solid #ddd;
+    border-color: #eea849;
+    border-radius: 45px;
+ 
+  }
+ input[type=radio] + label:hover {
+    border: 1px solid red;
+  }
+  input[type=radio]:checked{
+    border: 1px solid red;
+    background-color: red;
+  }
+
+  label:checked{
+    background-color: red;
+  }
+  */
+
+  .pref-next{
+  font-size: 1em;
+  padding: 1%;
+  border-radius: 45px;
+  font-family: 'Montserrat', sans-serif;
+  color: white ;
+  background:linear-gradient(to right, #f46b45, #f47b42, #f38b42, #f19a44, #eea849);
+  border-color: linear-gradient(to left bottom, #44647b, #597e98, #6f98b7, #86b4d6, #9dd0f6);
+  margin-top: 15%;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 20%;
+  outline: none
+  }
+

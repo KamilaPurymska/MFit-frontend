@@ -16,7 +16,7 @@ class TrainerCard extends Component {
         <div>
           <Link className="trainercard" to={`/trainers/${this.props.trainer._id}`}>
             <div className="img-train-list" >
-              <img src={this.props.trainer.photoUrl} alt="d" />
+              <img className="img-trainer" src={this.props.trainer.photoUrl} alt="d" />
             </div>
             <p className="name-trainer">{this.props.trainer.username}</p>
             <p className="price-trainer">{this.props.trainer.preferences.price}</p>

@@ -8,6 +8,7 @@ class Navbar extends Component {
     return <div className="navbar">
       <p><Link to='/auth/myProfile'>username: {this.props.user.username}</Link></p>
       <Link to='/'>Home</Link>
+      <Link to={`/trainers/`}>List</Link>
       <p onClick={this.props.logout}>Logout</p>
     </div>
   }
@@ -22,7 +23,7 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        { this.props.isLogged ? this.renderIsLoggedIn() : this.renderIsNotLoggedIn() }
+        { this.props.isLogged ? this.renderIsLoggedIn() : null }
       </div>
     )
   }

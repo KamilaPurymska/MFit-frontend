@@ -97,18 +97,26 @@ class PreferencesPage extends Component {
             <h2>What Are Your Fitness Goals?</h2>
 
             <div className="">
+            <div className="input-radio">
             <label className="">Lose weight
-                <input className="" type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
+                <input className="new" type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
             </label>
+            </div>
+            <div className="input-radio">
             <label className="">Get stronger
                 <input className="" type="radio" id="check" name="goals" value="Get stronger" onChange={this.handleOnChange} />
             </label>
+            </div>
+            <div className="input-radio">
             <label className="">Be healthier and feel better
                 <input className="" type="radio" id="check" name="goals" value="Be healthier and feel better" onChange={this.handleOnChange} />
             </label>
+            </div>
+            <div className="input-radio">
             <label className="">Recover and Rehab
                 <input className="" type="radio" id="check" name="goals" value="Recover and Rehab" onChange={this.handleOnChange} />
             </label>
+            </div>
             </div>
 
 
@@ -126,7 +134,7 @@ class PreferencesPage extends Component {
                       <input type="radio" id="check" name="active" value="Fitness is Part of My Daily Life" onChange={this.handleOnChange} />
             </label>
 
-            <button onClick={this.handleOnClick}>next</button>
+            <button className="pref-next" onClick={this.handleOnClick}>next</button>
           </div> : null
           }
 
@@ -155,7 +163,7 @@ class PreferencesPage extends Component {
                       <input type="radio" id="check" name="age" value="60+" onChange={this.handleOnChange} />
             </label>
 
-            <button onClick={this.handleOnClick2}>next</button>
+            <button className="pref-next" onClick={this.handleOnClick2}>next</button>
           </div> : null
           }
 
@@ -187,7 +195,7 @@ class PreferencesPage extends Component {
           }
 
 
-          <button type="submit">Submit</button>
+          <button className="pref-next" type="submit">Submit</button>
         </form>
 
       </div>
