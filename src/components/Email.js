@@ -42,22 +42,23 @@ class Email extends Component {
     const {sender, topic, text} = this.state;
     return (
       <div>
-        {!this.state.isSent ? 
+        {!this.state.isSent ? <div className="for-form">
         <form className="form-email">
-          <label>To
+          <h3>Contact with me!</h3>
+          <label className="email-label">To
           <input className="email" type="text" name="reciver" value={this.props.trainer.email}/>
           </label>
-          <label>From
+          <label className="email-label">From
           <input className="email"  type="text" placeholder="your email" name="sender" value={sender} onChange={this.handleOnChange}/>
           </label>
-          <label>Topic
-          <input className="email"  type="text" name="topic" value={topic} onChange={this.handleOnChange}/>
+          <label className="email-label">Topic
+          <input className="email"  type="text" placeholder="emial topic" name="topic" value={topic} onChange={this.handleOnChange}/>
           </label>
-          <label>Text
-          <textarea className="email" name="text" value={text} onChange={this.handleOnChange}/>
+          <label className="email-label">Text
+          <textarea className="email" name="text" placeholder="your message" value={text} onChange={this.handleOnChange}/>
           </label>
           <button className="videos" onClick={this.handleOnSubmit} type="submit">Send</button>
-        </form>
+        </form></div>
         : <h2>Your email has been sent!</h2> }
         
       </div>

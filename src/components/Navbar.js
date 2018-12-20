@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
 import '../App.css'
+import preferences from '../images/nav/music-control-settings-button.svg';
+import list from '../images/nav/list.svg';
+import logout from '../images/nav/logout-2.svg';
+import user from '../images/nav/user.svg';
+
 class Navbar extends Component {
 
   renderIsLoggedIn = () => {
     return <div className="navbar">
-      <p><Link to='/auth/myProfile'>username: {this.props.user.username}</Link></p>
-      <Link to='/'>Home</Link>
-      <Link to={`/trainers/`}>List</Link>
-      <p onClick={this.props.logout}>Logout</p>
+      <Link className="linksnav" to='/auth/myProfile'><img className="nav-icon" src={user} alt=""/></Link>
+      <Link className="linksnav" to='/'><img className="nav-icon" src={preferences} alt=""/></Link>
+      <Link className="linksnav" to={`/trainers/`}><img className="nav-icon" src={list} alt=""/></Link>
+      <p className="linksnav"><img className="nav-icon" onClick={this.props.logout} src={logout} alt=""/></p>
     </div>
   }
 

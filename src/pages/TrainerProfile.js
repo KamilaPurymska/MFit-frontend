@@ -63,15 +63,20 @@ class TrainerProfile extends Component {
       <div>
         {this.state.firstPage ? <div>
         <div>
+          <div className="img-profile-div">
           <img className="img-profile" src={this.state.trainer.photoUrl} alt="d" />
+          </div>
           <div className="container">
-            <h3>{this.state.trainer.username}</h3>
+            <div className="cont-name">
+              <h3>{this.state.trainer.username}</h3>
+            </div>
 
-            <ul>
+            <ul className="goals-train">
               {this.state.trainer.preferences.goals.map((goal)=> {
-                return <li key={`id=${goal}`}>{goal}</li>}
+                return <li className="goals-li" key={`id=${goal}`}>{goal}</li>}
               )}
             </ul>
+            
             
             <p className="description">{this.state.trainer.desciption}</p>
 
@@ -79,13 +84,13 @@ class TrainerProfile extends Component {
             <button className="videos"onClick = {this.handleOnClick}>Videos</button> }
             
             <form onSubmit={this.handleOnSubmit} method="POST">
-              <button className="videos" type="submit"> {this.state.title} </button>
+              <button className="videos follow" type="submit"> {this.state.title} </button>
             </form>
 
             <Email trainer={this.state.trainer}></Email>
           
           
-          <p><Link to={`/trainers`}>back</Link></p>
+          <Link to={`/trainers`}><p className="back">back</p></Link>
            
           </div>
         </div>
@@ -94,7 +99,7 @@ class TrainerProfile extends Component {
         {this.state.secondPage ? <div>
           { this.state.trainer.videoUrl.length === 0 ? null : <Video trainer={this.state.trainer} /> }
           
-          <button onClick={this.handleOnClick2}>Back</button>
+          <button className="back" onClick={this.handleOnClick2}>Back</button>
           </div> : null
           }
         

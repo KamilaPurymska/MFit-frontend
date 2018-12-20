@@ -95,29 +95,30 @@ class PreferencesPage extends Component {
   
           {this.state.firstPage ? <div>
             <h2>What Are Your Fitness Goals?</h2>
-
-            <div className="">
-            <div className="input-radio">
+            
+            <div className="center-on-page">
+            
+            
             <label className="">Lose weight
-                <input className="new" type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
+                <input className="rb" type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
             </label>
-            </div>
-            <div className="input-radio">
+           
+            
             <label className="">Get stronger
-                <input className="" type="radio" id="check" name="goals" value="Get stronger" onChange={this.handleOnChange} />
+                <input className="rb" type="radio" id="check" name="goals" value="Get stronger" onChange={this.handleOnChange} />
             </label>
-            </div>
-            <div className="input-radio">
+            
             <label className="">Be healthier and feel better
-                <input className="" type="radio" id="check" name="goals" value="Be healthier and feel better" onChange={this.handleOnChange} />
+                <input className="rb" type="radio" id="check" name="goals" value="Be healthier and feel better" onChange={this.handleOnChange} />
             </label>
-            </div>
-            <div className="input-radio">
+          
+           
             <label className="">Recover and Rehab
-                <input className="" type="radio" id="check" name="goals" value="Recover and Rehab" onChange={this.handleOnChange} />
+                <input className="rb" type="radio" id="check" name="goals" value="Recover and Rehab" onChange={this.handleOnChange} />
             </label>
+           
             </div>
-            </div>
+            
 
 
             <h2>How Active Are You Now?</h2>

@@ -26,20 +26,15 @@ class TrainersList extends Component {
       })
   }
 
-  componentWillUnmount() {
-    console.log("errrror")
-  }
-
-
   render() {
-    const {trainers} = this.state;
+    const {trainers, error} = this.state;
     if (this.state.isLoading) {
       return <div>Loading...</div>
     }
     if (trainers.length === 0) {
       return <div>there is no trainers</div>
     }
-    if (this.state.error) {
+    if (error) {
       return <div>error on the connection</div>
     }
     return (

@@ -11,27 +11,26 @@ html {
 p{
   margin: 0
 }
+
+a{
+  text-decoration: none;
+  color: #363636;
+}
 body {
   margin: 0;
   padding: 0;
   margin-bottom: 20%;
   font-family: 'Montserrat', sans-serif;
 }
-
-div.navbar{
-  bottom:0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  background-color: #FAFAFA
+button{
+  font-family: 'Montserrat', sans-serif;
 }
+
 
 .trainercard{
   display: grid;
   grid-template-columns: 20% auto 20%;
+  margin-bottom: 5%;
   grid-template-areas: 
     "img name price"
   
@@ -39,7 +38,9 @@ div.navbar{
 }
 
 .img-train-list{
-  grid-area: img
+  grid-area: img;
+  width: 80px;
+  height: 80px;
 }
 
 .name-trainer{
@@ -60,9 +61,7 @@ div.navbar{
   justify-content: space-around
 }
 
-.train{
-  width: 30%
-}
+
 
 .user-trainer-list{
   list-style: none;
@@ -167,29 +166,30 @@ iframe{
 }
 
 .input-auth{
-  border-bottom-color: rgba(212,212,216, 0.9);
+  border-bottom-color: rgba(212,212,216, 1);
     border-top: none;
     border-right: none;
     border-left: none;
     padding-bottom: 4%;
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: 'Montserrat', sans-serif;
     background-color: transparent;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     color: #2F323A;
-    width: 80%;
-    outline: none
+    width: 90%;
+    outline: none;
+    border-width: thin;
 }
 
 .input-auth::placeholder{
   color:white;
-  opacity: 0.5;
+  opacity: 0.8;
   font-weight: 100;
 }
 
 .signup-header{
   color: white;
-  font-size: 2em;
+  font-size: 2.8em;
   margin-bottom: 15%;
 }
 
@@ -205,7 +205,7 @@ iframe{
     cursor: pointer;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    width: 80%;
+    width: 90%;
     outline: none
 }
 
@@ -219,14 +219,14 @@ iframe{
 /* ---- home ---- */
 
 div.home{
-  background-color: #44647B;
+  background-color: #eea849;
   width: 100%;
-  height: 95%;
+  height: 92%;
   position: absolute;
 }
 
 img.logo-home{
-  width: 70%
+  width: 95%
 }
 
 .logo{
@@ -243,7 +243,10 @@ img.logo-home{
 /* ---- list ---- */
 
 .img-trainer{
-  width: 100%
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* ---- trainer profile ---- */
@@ -267,95 +270,194 @@ img.logo-home{
   padding: 4%;
   border-radius: 45px;
   font-family: 'Montserrat', sans-serif;
-  color: white ;
-  background:linear-gradient(to right, #f46b45, #f47b42, #f38b42, #f19a44, #eea849);
-  border-color: linear-gradient(to left bottom, #44647b, #597e98, #6f98b7, #86b4d6, #9dd0f6);
-  margin-top: 15%;
+  color: #363636 ;
+  background: transparent;
+  border-color: #f46b45;
+  margin-top: 10%;
   cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   width: 100%;
-  outline: none
+  outline: none;
+  text-align: center
 }
 
 /* ---- email---- */
 
 form.form-email{
   display: grid;
-  margin-top: 10%
+  width: 90%;
+  margin: 0 auto;
+  padding: 4% 4% 8% 4%
 }
 
 input.email{
-  border-color: #B2B2B2;
-  border-radius: 45px;
+  border-bottom-color: #B2B2B2;
+  opacity: 0.5;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   font-size: 1em;
   padding: 4%;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
-  outline: none
+  outline: none;
+  border-width: thin;
+  margin-bottom: 3%
 }
 
 input.email:focus{
   border-color: #eea849;
 }
 
+.email-label{
+  margin-top: 3%
+}
+
 textarea.email{
-  border-color: #eea849;
-  border-radius: 45px;
+  border-bottom-color: #B2B2B2;
+  opacity: 0.5;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   font-size: 1em;
   padding: 4%;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
-  outline: none
+  outline: none;
+  border-width: thin;
 }
 
-/*---pref----*/
-
-.input-radio{
-  display: inline-block;
-  margin-right: 10px;
-  margin-top: 30px;
-  
-}
- /*
-input[type=radio] {
-    display: none;
-  }
- 
-  input[type=radio]{
-    padding: 20px;
-    border-radius: 40px;
-    border: 1px solid #ddd;
-    border-color: #eea849;
-    border-radius: 45px;
- 
-  }
- input[type=radio] + label:hover {
-    border: 1px solid red;
-  }
-  input[type=radio]:checked{
-    border: 1px solid red;
-    background-color: red;
-  }
-
-  label:checked{
-    background-color: red;
-  }
-  */
-
-  .pref-next{
-  font-size: 1em;
-  padding: 1%;
-  border-radius: 45px;
-  font-family: 'Montserrat', sans-serif;
-  color: white ;
-  background:linear-gradient(to right, #f46b45, #f47b42, #f38b42, #f19a44, #eea849);
-  border-color: linear-gradient(to left bottom, #44647b, #597e98, #6f98b7, #86b4d6, #9dd0f6);
-  margin-top: 15%;
-  cursor: pointer;
+.for-form{
+  width: 100%;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  width: 20%;
-  outline: none
+  margin-top: 20%;
+
+}
+/*---pref----*/
+input[radio]{
+  background: #2EE59D
+}
+
+
+
+
+  /*----traines profile----*/
+  .cont-name{
+    background: white;
+    top: 330px;
+    position: absolute;
+    border-radius: 45px;
+    width: 85%;
+    justify-content: middle;
   }
 
+  .goals-train{
+    list-style: none;
+    margin-top: 20%;
+    margin-bottom: 10%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    font-size: 0.95em;
+    padding-left: 0;
+  }
+
+  .goals-li{
+    color: white ;
+    background:linear-gradient(to right, #f46b45, #f47b42, #f38b42, #f19a44, #eea849);
+    padding: 3% 5%;
+    border-radius: 45px;
+    font-size: 0.9em;
+    margin-right: 2%;
+  }
+
+  .img-profile-div{
+    width: 100%;
+    height: 40%
+  }
+
+  .img-profile{
+    object-fit: cover;
+    width: 100%;
+    height: 350px;
+  }
+
+  .follow{
+    background:linear-gradient(to right, #f46b45, #f47b42, #f38b42, #f19a44, #eea849);
+    border: none;
+    color: white
+  }
+
+  .back{
+    margin-top: 15%;
+    color:#f46b45
+  }
+
+  /*----user profile----*/
+
+  .profile{
+    margin: 0 auto;
+    width: 90%
+  }
+
+  h1.name-profile{
+    margin-top:15%;
+    text-align: left
+  }
+
+  .mypref{
+    font-size: 1.2em;
+    border-bottom-color: rgba(212,212,216, 1);
+    background: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-top: 15%;
+    padding-bottom: 3%;
+    border-width: thin;
+    outline: none;
+    padding-right: 15%;
+    text-align: center;
+    color: rgb(83, 83, 83);
+    margin-bottom: 10%;
+  }
+
+  .mypref:hover{
+    border-color: #eea849;
+  }
+
+  
+
+
+  .goal-pre{
+    text-align: left;
+    font-size: 1.5em;
+    margin-bottom: 5%;
+  }
+  
+  /*----navbar----*/
+
+  .nav-icon{
+    width:30%
+  }
+
+  div.navbar{
+    bottom:0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    background-color: #FAFAFA;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3%;
+    border-top: 0.4px solid #B2B2B2;
+    border-width: thin
+  }
+  
+  .linksnav{
+    text-align: center
+  }

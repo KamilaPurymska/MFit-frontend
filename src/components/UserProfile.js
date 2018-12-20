@@ -8,7 +8,9 @@ import { Link } from 'react-router-dom';
 class UserProfile extends Component {
   state= {
     user: {},
-    isLoading: true
+    isLoading: true,
+    firstPage: true,
+    secondPage: false
   }
   
   componentDidMount =() =>{
@@ -21,6 +23,19 @@ class UserProfile extends Component {
     })
   } 
  
+  handleOnClick = () => {
+    this.setState({
+      secondPage: true,
+      firstPage: false
+    })
+  }
+
+  handleOnClick2 = () => {
+    this.setState({
+      secondPage: false,
+      firstPage: true
+    })
+  }
 
   render() {
     if(this.state.isLoading){
@@ -28,24 +43,28 @@ class UserProfile extends Component {
     }else{
     return (
       <div>
-        <h3>My preferences</h3>
-        <p>My goal: {this.props.user.preferences.goals}</p>
-        <p>Prefered gender: {this.props.user.preferences.gender}</p>
-        <p>My age: {this.props.user.preferences.age}</p>
-        <p>My city: {this.props.user.preferences.city}</p>
-        <p>How active I am: {this.props.user.preferences.active}</p>
+        <button className="mypref" onClick={this.handleOnClick2}>My preferences</button>
+        <button className="mypref" onClick={this.handleOnClick}>Following</button>
+        {this.state.firstPage ? <div class="pref-fields">
+        <p className="goal-pre"><b>My goal:</b> {this.props.user.preferences.goals}</p>
+        <p className="goal-pre"><b>Prefered gender:</b> {this.props.user.preferences.gender}</p>
+        <p className="goal-pre"><b>My age:</b> {this.props.user.preferences.age}</p>
+        <p className="goal-pre"><b>My city:</b> {this.props.user.preferences.city}</p>
+        <p className="goal-pre"><b>How active I am:</b> {this.props.user.preferences.active}</p> </div>: 
         <ul>
           {this.state.user.savedtrainers.map((trainer)=>{
             return <Link to={`/trainers/${trainer._id}`} key={`id=${trainer._id}`}>
             <li className = "user-trainer-list" >
-              <div className="train" >
+              <div className="img-train-list" >
                 <img className="img-trainer" src={trainer.photoUrl} alt="d" />
               </div>
-              <p className="">{trainer.username}</p>
+              <p className="name-trainer">{trainer.username}</p>
             </li>
             </Link>
           })}
         </ul>
+        
+      }
 
       </div>
     );
