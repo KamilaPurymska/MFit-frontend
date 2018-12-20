@@ -39,13 +39,15 @@ class UserProfile extends Component {
 
   render() {
     if(this.state.isLoading){
-      return <div>loading...</div>
+      return <div>
+      <div>Loading...</div>
+    </div>
     }else{
     return (
       <div>
         <button className="mypref" onClick={this.handleOnClick2}>My preferences</button>
         <button className="mypref" onClick={this.handleOnClick}>Following</button>
-        {this.state.firstPage ? <div class="pref-fields">
+        {this.state.firstPage ? <div className="pref-fields">
         <p className="goal-pre"><b>My goal:</b> {this.props.user.preferences.goals}</p>
         <p className="goal-pre"><b>Prefered gender:</b> {this.props.user.preferences.gender}</p>
         <p className="goal-pre"><b>My age:</b> {this.props.user.preferences.age}</p>

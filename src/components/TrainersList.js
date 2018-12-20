@@ -10,10 +10,8 @@ class TrainersList extends Component {
   }
 
   componentDidMount () {
-    console.log('loll')
     trainersService.getMatchTrainers()
       .then((trainers) => {
-        console.log('trainers', trainers)
         this.setState({
           trainers,
           isLoading: false
@@ -29,7 +27,9 @@ class TrainersList extends Component {
   render() {
     const {trainers, error} = this.state;
     if (this.state.isLoading) {
-      return <div>Loading...</div>
+      return <div>
+      <div>Loading...</div>
+    </div>
     }
     if (trainers.length === 0) {
       return <div>there is no trainers</div>

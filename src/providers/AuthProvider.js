@@ -35,7 +35,6 @@ class AuthProvider extends Component {
   componentDidMount() {
     auth.me()
       .then((user) => {
-        console.log(user)
         this.setState({
           user,
           isLogged: true,
@@ -71,7 +70,9 @@ class AuthProvider extends Component {
 
   render() {
     if (this.state.isLoading) {
-      return <div>Loading....</div>
+      return <div className="loading isHidden">
+      <div >Loading...</div>
+    </div>
     }
     return <div>
       <Provider value={{

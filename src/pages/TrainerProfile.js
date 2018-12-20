@@ -57,7 +57,9 @@ class TrainerProfile extends Component {
 
   render() {
     if (this.state.isLoading) {
-      return <div>Loading.....</div>
+      return <div>
+      <div>Loading...</div>
+    </div>
     }
     return (
       <div>

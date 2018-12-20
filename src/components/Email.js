@@ -26,10 +26,8 @@ class Email extends Component {
   handleOnSubmit =(e) => {
     e.preventDefault();
     const {reciver, sender, topic, text} = this.state
-    console.log(this.state)
     trainersService.sendEmail({reciver, sender, topic, text})
     .then((result) => {
-      console.log(result)
       this.setState({
         isSent: true
       })
@@ -38,7 +36,6 @@ class Email extends Component {
   }
 
   render() {
-    console.log(this.state)
     const {sender, topic, text} = this.state;
     return (
       <div>
@@ -46,7 +43,7 @@ class Email extends Component {
         <form className="form-email">
           <h3>Contact with me!</h3>
           <label className="email-label">To
-          <input className="email" type="text" name="reciver" value={this.props.trainer.email}/>
+          <input className="email" type="text" name="reciver" defaultValue={this.props.trainer.email}/>
           </label>
           <label className="email-label">From
           <input className="email"  type="text" placeholder="your email" name="sender" value={sender} onChange={this.handleOnChange}/>

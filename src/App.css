@@ -66,11 +66,16 @@ button{
 .user-trainer-list{
   list-style: none;
   display: flex;
+  margin-top: 3%
 }
 
 h3, h1{
   text-align: center;
   color: #363636;
+}
+
+ul{
+  list-style: none;
 }
 
 .formrow {
@@ -339,9 +344,98 @@ input[radio]{
   background: #2EE59D
 }
 
+.list-pref{
+  text-align: center;
+  padding-left: 0;
+}
+.namea{
+  font-size: 1.3em;
+  color: white
+}
+.li-radio{
+  margin-top: 5%
+}
 
+.pref-pagee{
+  background-color: #eea849;
+  width: 100%;
+  height: 92%;
+  position: absolute;
+}
 
+.header-pref{
+  color:#E8CEA0;
+}
 
+.titles{
+  text-align: center;
+  color:#363636;
+  margin-top: 10%
+}
+
+.pref-next{
+  width: 100px;
+  height: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: white;
+  background-color: transparent;
+  border: white;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  float: right;
+}
+
+.city-input{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 0.4px solid white;
+  border-width: thin;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  font-size: 1em;
+  width: 80%;
+  margin-left: 10%;
+  padding-left: 2%
+}
+
+.city-input::placeholder{
+  color: white;
+  opacity: 0.5;
+}
+
+.sub{
+  width: 190px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  bottom: 40px;
+  margin-top: 10%;
+  margin-left: 25%
+}
+.cont-pref{
+  margin: 0 auto;
+  width: 90%
+}
   /*----traines profile----*/
   .cont-name{
     background: white;
@@ -361,15 +455,18 @@ input[radio]{
     justify-content: space-between;
     font-size: 0.95em;
     padding-left: 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .goals-li{
     color: white ;
     background:linear-gradient(to right, #f46b45, #f47b42, #f38b42, #f19a44, #eea849);
-    padding: 3% 5%;
+    padding: 3% 10%;
     border-radius: 45px;
     font-size: 0.9em;
     margin-right: 2%;
+    margin-bottom: 3%
   }
 
   .img-profile-div{
@@ -420,7 +517,7 @@ input[radio]{
     padding-right: 15%;
     text-align: center;
     color: rgb(83, 83, 83);
-    margin-bottom: 10%;
+    margin-bottom: 7%;
   }
 
   .mypref:hover{
@@ -432,7 +529,7 @@ input[radio]{
 
   .goal-pre{
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-bottom: 5%;
   }
   
@@ -460,4 +557,99 @@ input[radio]{
   
   .linksnav{
     text-align: center
+  }
+
+  /*-- is loading */
+
+  div.isLoading {
+    display: none;
+  }
+  
+  div.loading.isHidden {
+    display: none;
+  }
+  
+  div.loading {
+    display: block;
+  }
+  
+  .loader-one {
+    color: #eea849;
+    font-size: 90px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 40% auto;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  }
+  @-webkit-keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+  }
+  @keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+  }
+  @-webkit-keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
