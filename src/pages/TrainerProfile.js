@@ -79,7 +79,8 @@ class TrainerProfile extends Component {
               )}
             </ul>
             
-            
+            <p className="city-pro"><i>{this.state.trainer.preferences.city}</i></p>
+            <p className="about"><b>About me</b></p>
             <p className="description">{this.state.trainer.desciption}</p>
 
             { this.state.trainer.videoUrl.length === 0 ? null :

@@ -8,9 +8,11 @@ class Home extends Component {
       <div className="home">
         <div className="auth-form">
           <h3 className="find">Find your trainer</h3>
+          <div className="pulse">
           <Link className="logo" to={`/preferences/`}>
             <img className="logo-home" src={image} alt='logo'/>
           </Link>
+          </div>
         </div>
       </div>
     )

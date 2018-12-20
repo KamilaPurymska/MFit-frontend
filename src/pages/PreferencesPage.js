@@ -103,24 +103,24 @@ class PreferencesPage extends Component {
             <ul className="list-pref">
               <li className="li-radio">
             <label className="namea">Lose weight
-                <input className="button-radio" type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
+                <input required={true} className="button-radio" type="radio" id="check" name="goals" value="Lose weight" onChange={this.handleOnChange} />
             </label>
             </li>
            
             <li className="li-radio">
             <label className="namea">Get stronger</label>
-                <input className="button-radio1" type="radio" id="check" name="goals" value="Get stronger" onChange={this.handleOnChange} />
+                <input required={true} className="button-radio1" type="radio" id="check" name="goals" value="Get stronger" onChange={this.handleOnChange} />
             </li>
             
             <li className="li-radio">
             <label className="namea">Be healthier and feel better
-                <input className="-radio" type="radio" id="check" name="goals" value="Be healthier and feel better" onChange={this.handleOnChange} />
+                <input required={true} className="-radio" type="radio" id="check" name="goals" value="Be healthier and feel better" onChange={this.handleOnChange} />
             </label>
             </li>
           
             <li className="li-radio">
             <label className="namea">Recover and Rehab
-                <input className="" type="radio" id="check" name="goals" value="Recover and Rehab" onChange={this.handleOnChange} />
+                <input required={true} className="" type="radio" id="check" name="goals" value="Recover and Rehab" onChange={this.handleOnChange} />
             </label>
             </li>
 
@@ -163,7 +163,7 @@ class PreferencesPage extends Component {
 
           {this.state.secondPage ? <div> 
             <h2 className="titles">Your city</h2>
-            <input className="city-input" type="text" value={city} name="city" onChange={this.handleOnChange} placeholder="city" />
+            <input className="city-input" required={true} type="text" value={city} name="city" onChange={this.handleOnChange} placeholder="city" />
             
             <h2 className="titles">Your age?</h2>
             <ul className="list-pref">

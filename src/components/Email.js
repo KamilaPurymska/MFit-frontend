@@ -46,13 +46,13 @@ class Email extends Component {
           <input className="email" type="text" name="reciver" defaultValue={this.props.trainer.email}/>
           </label>
           <label className="email-label">From
-          <input className="email"  type="text" placeholder="your email" name="sender" value={sender} onChange={this.handleOnChange}/>
+          <input className="email" required={true} type="email" placeholder="your email" name="sender" value={sender} onChange={this.handleOnChange}/>
           </label>
           <label className="email-label">Topic
-          <input className="email"  type="text" placeholder="emial topic" name="topic" value={topic} onChange={this.handleOnChange}/>
+          <input className="email" required={true} type="text" placeholder="emial topic" name="topic" value={topic} onChange={this.handleOnChange}/>
           </label>
           <label className="email-label">Text
-          <textarea className="email" name="text" placeholder="your message" value={text} onChange={this.handleOnChange}/>
+          <textarea className="email" required={true} name="text" placeholder="your message" value={text} onChange={this.handleOnChange}/>
           </label>
           <button className="videos" onClick={this.handleOnSubmit} type="submit">Send</button>
         </form></div>
